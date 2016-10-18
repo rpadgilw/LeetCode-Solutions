@@ -10,8 +10,6 @@
 * 
 */
 
-
-
 import java.util.*;
 
 public class Solution {
@@ -20,15 +18,16 @@ public class Solution {
         HashMap<Integer, Integer> loc = new HashMap<>();
         int sol[] = new int[2];
         
-        //int j = nums.length;
+        
         for(int i =0; i < nums.length; i++) {
             if(loc.containsKey(nums[i])){
                 sol[0] = loc.get(nums[i]);
                 sol[1] = i;
-                //return(loc.get(nums[i]),i);
+                
                 return(sol);
             }
             else{
+                // We can work other way round too, push key and find target - key. 
                 loc.put(target - nums[i], i);
             }
         }
